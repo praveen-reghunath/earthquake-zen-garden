@@ -5,3 +5,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gray-10: #ededed;
+  --gray-20: #777777;
+  --gray-30: #444444;
+  --blue: #0011bb;
+  --light-blue: #6600cc;
+}
