@@ -9,8 +9,6 @@ const useAppContext = () => {
     const [profile, setProfile] = useState();
     const [earthquakes, dispatch] = useReducer(earthquakesReducer, {});
 
-    console.log(earthquakes);
-
     const sortEarthquakes = (column) => {
         dispatch({ type: `SORT_BY_${column}` });
     };

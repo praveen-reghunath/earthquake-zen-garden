@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+
 import API from 'utils/api';
 import { useAppState } from 'state/appState';
-
 import InfoRow from 'components/InfoRow';
 
 import './Profile.scss';

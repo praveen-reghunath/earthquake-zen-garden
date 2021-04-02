@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from './layouts/Header';
+import Header from 'layouts/Header';
 
-import Details from './pages/Details';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
+import Details from 'pages/Details';
+import Home from 'pages/Home';
+import Profile from 'pages/Profile';
 
-import API from './utils/api';
+import API from 'utils/api';
 
-import { useAppState } from './state/appState';
+import { useAppState } from 'state/appState';
 
 import './App.scss';
 
@@ -18,7 +18,7 @@ function App() {
   const requestAppInfo = async () => {
     const appInfo = await API.getApplicationInfo();
     setSiteInfo(appInfo.siteInfo);
-    setUserName(appInfo.setUserName);
+    setUserName(appInfo.userName);
   };
 
   const getLatestEarthquakesList = async () => {
