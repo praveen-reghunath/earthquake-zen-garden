@@ -12,7 +12,7 @@ function Header() {
             </Link>
             <h1>{title}</h1>
             <Link to="/profile">
-                <span>Welcome </span>
+                <span className="greeting">Welcome </span>
                 <span>{userName}</span>
             </Link>
         </header>

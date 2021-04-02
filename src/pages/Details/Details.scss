@@ -18,4 +18,18 @@
     .value {
         width: 30vw;
     }
+
+    @media only screen and (max-width: 600px) {
+        h2 {
+            font-size: inherit;
+        }
+
+        .name {
+            width: 30vw;
+        }
+
+        .value {
+            width: 50vw;
+        }
+    }
 }

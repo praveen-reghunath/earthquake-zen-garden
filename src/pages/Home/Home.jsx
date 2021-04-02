@@ -1,6 +1,7 @@
-import './Home.scss';
 import { useAppState } from 'state/appState';
 import { Link } from 'react-router-dom'
+
+import './Home.scss';
 
 function Home() {
     const { earthquakes: { title, list = [] } = {}, sortEarthquakes } = useAppState();
