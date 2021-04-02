@@ -4,7 +4,7 @@ import { useAppState } from 'state/appState';
 import './Header.scss';
 
 function Header() {
-    const [{ userName, siteInfo: { logoImage, title } }] = useAppState();
+    const { userName, siteInfo: { logoImage, title } = {} } = useAppState();
     return (
         <header className="header">
             <Link to="/">

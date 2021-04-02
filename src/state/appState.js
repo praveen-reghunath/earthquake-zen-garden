@@ -1,16 +1,36 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useReducer } from 'react';
+import { earthquakesReducer } from './earthquakesReducer';
 
 const AppContext = createContext(null);
 
-const initialState = {
-    siteInfo: {},
-    userName: '',
-    profile: undefined,
-    earthquakes: undefined,
-    earthquakeDetails: undefined
-};
+const useAppContext = () => {
+    const [siteInfo, setSiteInfo] = useState();
+    const [userName, setUserName] = useState('');
+    const [profile, setProfile] = useState();
+    const [earthquakes, dispatch] = useReducer(earthquakesReducer, {});
 
-const useAppContext = () => useState(initialState);
+    console.log(earthquakes);
+
+    const sortEarthquakes = (column) => {
+        dispatch({ type: `SORT_BY_${column}` });
+    };
+
+    const setEarthquakes = (data) => {
+        dispatch({ type: `INIT`, payload: data });
+    };
+
+    return {
+        siteInfo,
+        setSiteInfo,
+        userName,
+        setUserName,
+        profile,
+        setProfile,
+        earthquakes,
+        setEarthquakes,
+        sortEarthquakes
+    };
+};
 
 export const AppContextProvider = ({ children }) => {
     return (

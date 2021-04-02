@@ -13,28 +13,23 @@ import { useAppState } from './state/appState';
 import './App.scss';
 
 function App() {
-  const [state, updateAppState] = useAppState();
+  const { setSiteInfo, setUserName, setEarthquakes } = useAppState();
 
   const requestAppInfo = async () => {
     const appInfo = await API.getApplicationInfo();
-    updateAppState(prevState => {
-      return { ...prevState, ...appInfo };
-    });
+    setSiteInfo(appInfo.siteInfo);
+    setUserName(appInfo.setUserName);
   };
 
   const getLatestEarthquakesList = async () => {
     const earthquakes = await API.getLatestEarthquakes();
-    updateAppState(prevState => {
-      return { ...prevState, earthquakes };
-    });
+    setEarthquakes(earthquakes);
   }
 
   useEffect(() => {
     requestAppInfo();
     getLatestEarthquakesList();
   }, []);
-
-  console.log(state);
 
   return (
     <main className="App">

@@ -23,12 +23,14 @@ function Details() {
         <section className="details">
             <h2>{title}</h2>
             <table>
-                <InfoRow label="Title">{title}</InfoRow>
-                <InfoRow label="Magnitude">{mag}</InfoRow>
-                <InfoRow label="Time">{time}</InfoRow>
-                <InfoRow label="Status">{status}</InfoRow>
-                <InfoRow label="Tsunami">{tsunami}</InfoRow>
-                <InfoRow label="Type">{type}</InfoRow>
+                <tbody>
+                    <InfoRow label="Title">{title}</InfoRow>
+                    <InfoRow label="Magnitude">{mag}</InfoRow>
+                    <InfoRow label="Time">{time}</InfoRow>
+                    <InfoRow label="Status">{status}</InfoRow>
+                    <InfoRow label="Tsunami">{tsunami}</InfoRow>
+                    <InfoRow label="Type">{type}</InfoRow>
+                </tbody>
             </table>
         </section>
     );

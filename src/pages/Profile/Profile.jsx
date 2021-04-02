@@ -7,14 +7,12 @@ import InfoRow from 'components/InfoRow';
 import './Profile.scss';
 
 function Profile() {
-    const [{ profile }, updateAppState] = useAppState();
+    const { profile, setProfile } = useAppState();
     const { firstName, lastName, avatarImage, phone, email, bio } = profile || {};
 
     const requestProfile = async () => {
         const profile = await API.getProfileDetails();
-        updateAppState(prevState => {
-            return { ...prevState, profile };
-        });
+        setProfile(profile);
     };
 
     useEffect(() => {
