@@ -17,3 +17,11 @@ body {
   --blue: #0011bb;
   --light-blue: #6600cc;
 }
+
+a {
+  color: var(--blue);
+}
+
+a:visited {
+  color: var(--light-blue);
+}
